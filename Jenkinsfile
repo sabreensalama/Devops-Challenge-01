@@ -1,8 +1,6 @@
 pipeline 
 {
-    environment {
-        PATH = "$PATH://usr/local/bin/docker-compose"
-    }
+
     agent any
     stages {
         stage('Testing Stage') {
@@ -13,7 +11,7 @@ pipeline
 
         stage('Build stage Stage') {
             steps {
-                sh "docker-compose up --build"
+                sh "/usr/local/bin/docker-compose -f docker-compose.yml up -d --build"
             }
         }
     }
