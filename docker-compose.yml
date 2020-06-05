@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+  hello-python:
+    build: .
+    container_name: tornado-app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+      - ENVIRONMENT=dev
+      - HOST=localhost
+      - PORT=8000
+
+    depends_on:
+      - redis
+    ports: 
+      - "4222:8000"
+
+
+
+  redis:
+    image: redis
+    container_name: redis-tornado
