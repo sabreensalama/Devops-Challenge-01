@@ -11,7 +11,6 @@ pipeline
 
         stage('Build stage Stage') {
             steps {
-                sh "docker ps"
                 sh "docker-compose.yml up -d --build"
             }
         }
