@@ -4,7 +4,7 @@ pipeline
     stages {
         stage('Testing Stage') {
             steps {
-               sh "cd /app/ &&  python tests/test.py"
+               sh "python tests/test.py"
             }
         }
     }
