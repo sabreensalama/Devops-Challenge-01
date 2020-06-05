@@ -7,6 +7,12 @@ pipeline
                sh "python tests/test.py"
             }
         }
+
+        stage('Build stage Stage') {
+            steps {
+                sh "docker-compose up"
+            }
+        }
     }
 
 }
