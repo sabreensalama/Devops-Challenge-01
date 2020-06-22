@@ -15,18 +15,11 @@ pipeline
             }
             steps {
                 sh "docker-compose up "
+                sh 'sleep 300'
             }
         }
 
-         stage ("wait to run from dev env")
-            {
-            steps {
-                sh 'sleep 300'
-
-            }
-            }
     
-
           stage('Deploy for production') {
             when {
                 branch 'prod'  
