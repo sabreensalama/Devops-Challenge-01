@@ -18,9 +18,12 @@ pipeline
             }
         }
 
-        stage ("wait to run from dev env")
+         stage ("wait to run from dev env")
             {
-            sh 'sleep 300'
+            steps {
+                sh 'sleep 300'
+
+            }
             }
     
 
