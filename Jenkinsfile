@@ -26,7 +26,7 @@ pipeline
             }
             steps {
 
-                sh 'sed -i "s/DEV/production" .env'
+                sh 'sed -i "s,DEV,production" .env'
                 sh "docker-compose up "
               
             }
