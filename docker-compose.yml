@@ -3,7 +3,7 @@ services:
   hello-python:
     build: .
     container_name: tornado-app
-    env_file: ./.env
+    env_file: ${ENV}
 
     depends_on:
       - redis
