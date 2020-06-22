@@ -30,7 +30,7 @@ pipeline
             }
             steps {
                 sh 'sed -e "s/dev /production" .env'
-'
+
                 sh "docker-compose up "
             }
         }
