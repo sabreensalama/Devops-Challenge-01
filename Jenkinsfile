@@ -25,9 +25,9 @@ pipeline
                 branch 'prod'  
             }
             steps {
-                sh 'sed -e "s/dev/production" .env'
-
+              withEnv(["ENVIRONMENT=Production"]) {
                 sh "docker-compose up "
+              }
             }
         }
     }
