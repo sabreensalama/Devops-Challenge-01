@@ -14,7 +14,7 @@ pipeline
                 branch 'dev' 
             }
             steps {
-                sh "docker-compose up "
+                sh "ENV=./.env docker-compose up "
                 sh 'sleep 300'
             }
         }
@@ -25,9 +25,10 @@ pipeline
                 branch 'prod'  
             }
             steps {
-              withEnv(["ENVIRONMENT=Production"]) {
-                sh "docker-compose up "
-              }
+
+                // sh 'sed -i "s,DEV,production" ./.env'
+                sh " ENV=./.prod-env docker-compose up "
+              
             }
         }
     }
